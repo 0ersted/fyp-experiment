@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Congraduation! You finish all your test!</h1>
+    <br>
+    <h3>Statistic: {{$accuracy}}</h3>
+
     <p><a href="/">Go back to the welcome page.</a></p>
     
 </body>

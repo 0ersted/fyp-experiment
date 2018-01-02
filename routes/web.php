@@ -28,6 +28,15 @@ Route::get('subject/{sub_id}/audio/{audio_id}', function($sub_id, $audio_id){
 
 Route::post('subject/{sub_id}/audio/{audio_id}/{solution}', 'AnswerController@store');
 
-Route::get('finish', function(){
-    return view('finish');
+Route::get('subject/{sub_id}/finish', function($sub_id){
+    $list = App\Answer::where('subject_id', $sub_id)->orderBy('subject_id', 'asc')->get();
+
+    $correct = 0;
+    foreach ($list as $l){
+        if ($l->correctness == 1){
+            $correct++;
+        }
+    }
+    $accuracy = $correct/count($list);
+    return view('finish', ['accuracy' => $accuracy]);
 });

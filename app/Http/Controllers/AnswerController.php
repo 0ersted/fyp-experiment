@@ -25,8 +25,7 @@ class AnswerController extends Controller
         $num = Answer::getRandomAudioBySubjectId($sub_id);
 
         if ($num == -1){
-            return redirect('finish');
-
+            return redirect('subject/'.$sub_id.'/finish');
         }
         return redirect('subject/' . $sub_id . '/audio/' . $num );
     }
