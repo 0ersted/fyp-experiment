@@ -12,7 +12,10 @@ class AnswerController extends Controller
         $answer = new Answer;
         $answer->subject_id = $sub_id;
         $answer->audio_id = $audio_id;
-        $answer->solution = $solution;
+        $answer->experiment_id = 1;
+        $answer->experimenter = 1;
+
+        $answer->solution_emotion = $solution;
 
         $key = Audio::getKeyByAudioId($audio_id);
         if ($solution == $key){

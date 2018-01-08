@@ -17,12 +17,20 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('subject_id');
             $table->integer('audio_id');
-            $table->enum('solution', [
+            $table->integer('experiment_id');
+            $table->enum('experimenter', [1, 2]);
+            $table->enum('solution_emotion', [
                 'happy',
                 'sad',
                 'angry',
-                'fear'
-            ]);
+                'fear',
+                'calm'
+            ])->nullable();
+            $table->enum('solution_tone',[
+                'declarative',
+                'questionary'
+            ])->nullable();
+            $table->enum('level', range(0, 4))->nullable();
             $table->boolean('correctness')->default(0);
             $table->timestamps();
         });

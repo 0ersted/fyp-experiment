@@ -15,12 +15,19 @@ class CreateAudiosTable extends Migration
     {
         Schema::create('audios', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100);
+            $table->enum('experimenter', [1, 2]);
             $table->enum('emotion', [
                 'happy',
                 'sad',
                 'angry',
-                'fear'
-            ]);
+                'fear',
+                'calm'
+            ])->nullable();
+            $table->enum('tone',[
+                'declarative',
+                'questionary'
+            ])->nullable();
             $table->timestamps();
         });
     }
