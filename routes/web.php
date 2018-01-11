@@ -21,7 +21,7 @@ Route::get('subject/{sub_id}/audio/{audio_id}', function($sub_id, $audio_id){
     
     return view('main', [
         'sub_id' => $sub_id,
-        'audio_id' => $audio_id
+        'audio' => App\Audio::find($audio_id)
     ]);
 
 });

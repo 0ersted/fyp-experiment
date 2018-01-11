@@ -16,7 +16,7 @@
     @php  ($emotions = array("happy", "sad", "angry", "fear"))
     @foreach ($emotions as $emotion)
     <div class="col-md-6">
-        <form action="{{ '/subject/' .$sub_id. '/audio/' .$audio_id . '/' .$emotion }}" method="POST" >
+        <form action="{{ '/subject/' .$sub_id. '/audio/' .$audio->id. '/' .$emotion }}" method="POST" >
             {{ csrf_field() }}
             <button type="submit" name=$emotion."Btn" value=$emotion class="btn-link center-block">
             <img src="{{ asset('images/' .$emotion. '.jpeg') }}"  alt=$emotion height="300" width="300">
@@ -27,9 +27,9 @@
     </div>
     <div class="row text-center">
         <p>Subject: {{$sub_id}} </p>
-        <p>Audio: {{$audio_id}}</p>
+        <p>Audio: {{$audio->id}}</p>
     <audio class="center-block" controls="controls">
-        <source src="{{ asset('audios/' .$audio_id. '.mp3') }}" type="audio/mp3" />
+        <source src="{{ asset('audios/' .$audio->name. '.mp3') }}" type="audio/mp3" />
     </audio>
         <a href="/">Back to main page and finish the expirement</a>
     </div>
