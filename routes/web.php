@@ -17,26 +17,12 @@ Route::get('/', function () {
 
 Route::post('subject', 'SubjectController@store');
 
-Route::get('subject/{sub_id}/audio/{audio_id}', function($sub_id, $audio_id){
-    
-    return view('main', [
-        'sub_id' => $sub_id,
-        'audio' => App\Audio::find($audio_id)
-    ]);
+Route::get('exp/{exp_id}/subject/{sub_id}', 'AnswerController@index');
 
-});
+Route::get('show', 'AnswerController@show');
 
-Route::post('subject/{sub_id}/audio/{audio_id}/{solution}', 'AnswerController@store');
+Route::get('exp/{exp_id}/subject/{sub_id}/audio/{audio_id}', 'AnswerController@main');
 
-Route::get('subject/{sub_id}/finish', function($sub_id){
-    $list = App\Answer::where('subject_id', $sub_id)->orderBy('subject_id', 'asc')->get();
+Route::post('exp/{exp_id}/subject/{sub_id}/audio/{audio_id}/{solution}', 'AnswerController@store');
 
-    $correct = 0;
-    foreach ($list as $l){
-        if ($l->correctness == 1){
-            $correct++;
-        }
-    }
-    $accuracy = $correct/count($list);
-    return view('finish', ['accuracy' => $accuracy]);
-});
+Route::get('exp/{exp_id}/subject/{sub_id}/finish', 'AnswerController@finish');

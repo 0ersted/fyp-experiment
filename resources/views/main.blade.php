@@ -16,10 +16,11 @@
     @php  ($emotions = array("happy", "sad", "angry", "fear"))
     @foreach ($emotions as $emotion)
     <div class="col-md-6">
-        <form action="{{ '/subject/' .$sub_id. '/audio/' .$audio->id. '/' .$emotion }}" method="POST" >
+        <form action="{{ '/exp/' . $exp_id. '/subject/' .$sub_id. '/audio/' .$audio->id. '/' .$emotion }}" 
+        method="POST" >
             {{ csrf_field() }}
             <button type="submit" name=$emotion."Btn" value=$emotion class="btn-link center-block">
-            <img src="{{ asset('images/' .$emotion. '.jpeg') }}"  alt=$emotion height="300" width="300">
+            <img src="{{ asset('images/' .$emotion. '.jpeg') }}"  alt=$emotion height="250" width="250">
             </button>
         </form>
     </div>

@@ -11,10 +11,17 @@
     <body>
         <h1>Welcome to this experiment!</h1>
 
-        <h2>Please enter the subject name.</h2>
         <form action='subject' method="POST">
             {{ csrf_field() }}
-            <input type="text" name="name" id='name'>
+            <h2>Please enter the subject name.</h2>
+            <input type="text" name="sub_name" id='name'>
+            <br>
+            <h2>Please choose the experiment.</h2>
+            @php ($array = range(1,5))
+            @foreach ($array as $a)
+            <input type="radio" name="experiment_id" value={{$a}}>{{'experiment ' . $a}}
+            <br>
+            @endforeach
             <input type="submit"  value='submittttt'>
         </form>
 

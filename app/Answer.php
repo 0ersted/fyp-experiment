@@ -16,7 +16,7 @@ class Answer extends Model
             $audioList[] = $answer->audio_id;
         }
 
-        if (count($audioList) == Audio::count()){
+        if (count($audioList) == Audio::count()){ // Audio::count() needs to be modified as well as the database
             return -1;
         }
         else{
