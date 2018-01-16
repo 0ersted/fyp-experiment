@@ -10,9 +10,28 @@
 </head>
 <body>
     <h1>Experiment Instruction</h1> 
+    @switch($exp_id)
+        @case(1)
+        <h2>Experiment 1</h2>
+        @break
+        @case(2)
+        <h2>Experiment 2</h2>
+        @break
+        @case(3)
+        <h2>Experiment 3</h2>
+        @break
+        @case(4)
+        <h2>Experiment 4</h2>
+        @break
+        @case(5)
+        <h2>Experiment 5</h2>
+        @break
+    @endswitch
+    @if ($exp_id > 0 && $exp_id < 6)
     <button type="submit">
     <a href="{{ action('AnswerController@show', ['exp_id' => $exp_id, 'sub_id' => $sub_id])}}">Start!
     </a></button>
+    @endif
 </body>
 </html>
 

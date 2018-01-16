@@ -17,6 +17,7 @@ class CreateAudiosTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->enum('experimenter', [1, 2]);
+            $table->enum('experiment', range(1,5));
             $table->enum('emotion', [
                 'happy',
                 'sad',

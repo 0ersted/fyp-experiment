@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
+    private $exp_list1 = array(1, 3);
+    private $exp_list2 = array(2);
+
     public function index($exp_id, $sub_id){
 
         // a blade view of about the experiment instruction
@@ -22,16 +25,9 @@ class AnswerController extends Controller
         $exp_id= $request->input('exp_id');
         $sub_id = $request->input('sub_id');
 
-        if ($exp_id == 1){
-            // generate a random audio or sth
-            $num = Answer::getRandomAudioBySubjectId($sub_id);
-            return redirect('exp/' .$exp_id. '/subject/' .$sub_id. '/audio/' .$num);
-        }
+        $num = Answer::getRandomAudio($exp_id, $sub_id);
+        return redirect('exp/' .$exp_id. '/subject/' .$sub_id. '/audio/' .$num);
 
-
-
-        // go to main page
-        return view('/');
     }
 
     public function main($exp_id, $sub_id, $audio_id){
@@ -48,23 +44,34 @@ class AnswerController extends Controller
         $answer = new Answer;
         $answer->subject_id = $sub_id;
         $answer->audio_id = $audio_id;
-        $answer->experiment_id = 1;
-        $answer->experimenter = 1;
+        $answer->experiment_id = $exp_id;
 
-        $answer->solution_emotion = $solution;
 
-        $key = Audio::getKeyByAudioId($audio_id);
+        if (in_array($exp_id, $this->exp_list1)){
+            $answer->experimenter = 1;
+            $key = Audio::getEmotionByAudioId($audio_id);
+            $answer->solution_emotion = $solution;
+        }
+        elseif (in_array($exp_id, $this->exp_list2)){
+            $answer->experimenter = 2;
+            $key = Audio::getToneByAudioId($audio_id);
+            $answer->solution_tone = $solution;
+            // not completed yet
+        }
+
+        //dd([$key, $solution]);
         if ($solution == $key){
             $answer->correctness = 1;
         }
-
+        //dd($answer->correctness);
+        //dd($answer);
         $answer->save();
 
         //generate a random number in the rest of audios
-        $num = Answer::getRandomAudioBySubjectId($sub_id);
+        $num = Answer::getRandomAudio($exp_id, $sub_id);
 
         if ($num == -1){
-            return redirect('exp/' .$exp_id. '/subject/'.$sub_id.'/finish');
+            return redirect('exp/' .$exp_id. '/subject/'. $sub_id. '/finish');
         }
         return redirect('exp/' .$exp_id. '/subject/' . $sub_id . '/audio/' . $num );
 

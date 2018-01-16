@@ -17,7 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('subject_id');
             $table->integer('audio_id');
-            $table->integer('experiment_id');
+            $table->enum('experiment_id', range(1,5));
             $table->enum('experimenter', [1, 2]);
             $table->enum('solution_emotion', [
                 'happy',
