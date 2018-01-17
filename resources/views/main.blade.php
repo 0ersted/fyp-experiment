@@ -32,7 +32,7 @@
                     <p>Subject: {{$sub_id}} </p>
                     <p>Audio: {{$audio->id}}</p>
                 <audio class="center-block" controls="controls">
-                    <source src="{{ asset('audios/' .$audio->name. '.mp3') }}" type="audio/mp3" />
+                    <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
                 </audio>
                     <a href="/">Back to main page and finish the expirement</a>
                 </div>
@@ -59,7 +59,7 @@
                     <p>Subject: {{$sub_id}} </p>
                     <p>Audio: {{$audio->id}}</p>
                     <audio class="center-block" controls="controls">
-                        <source src="{{ asset('audios/' .$audio->name. '.mp3') }}" type="audio/mp3" />
+                        <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
                     </audio>
                     <a href="/">Back to main page and finish the expirement</a>
                 </div>
@@ -86,7 +86,7 @@
                     <p>Subject: {{$sub_id}} </p>
                     <p>Audio: {{$audio->id}}</p>
                 <audio class="center-block" controls="controls">
-                    <source src="{{ asset('audios/' .$audio->name. '.mp3') }}" type="audio/mp3" />
+                    <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
                 </audio>
                     <a href="/">Back to main page and finish the expirement</a>
                 </div>
