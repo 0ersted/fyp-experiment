@@ -17,7 +17,7 @@
             <input type="text" name="sub_name" id='name'>
             <br>
             <h2>Please choose the experiment.</h2>
-            @php ($array = range(1,5))
+            @php ($array = range(1,7))
             @foreach ($array as $a)
             <input type="radio" name="experiment_id" value={{$a}}>{{'experiment ' . $a}}
             <br>

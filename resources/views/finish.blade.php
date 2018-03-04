@@ -9,7 +9,9 @@
 <body>
     <h1>Congraduation! You finish all your test!</h1>
     <br>
-    <h3>Statistic: {{$accuracy}}</h3>
+    @if($exp_id < 4):
+        <h3>Statistic: {{$accuracy}}</h3>
+    @endif
 
     <p><a href="/">Go back to the welcome page.</a></p>
     

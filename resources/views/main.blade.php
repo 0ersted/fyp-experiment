@@ -101,12 +101,174 @@
             </style>
         @break
         @case(4)
+        <div class='container text-center'>
+            <h1 class='text-center'>请选择音频对应的快乐语气的程度</h1>
+            <div class='row' id='formBox'>
+                <form action="{{ '/exp/' . $exp_id. '/subject/' .$sub_id. '/audio/' .$audio->id. '/happy' }}"
+                    method="post">
+                    {{ csrf_field() }}
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="0">极弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="1">较弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="2">一般
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="3">较强
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="4">极强
+                    </div>
+                    <br>
+                    <div class='text-center'>
+                        <input type="submit" value="提交" id='submitBox'>
+                    </div>
+                </form>
+            </div>
+                <div class="row text-center">
+                    <p>Subject: {{$sub_id}} </p>
+                    <p>Audio: {{$audio->id}}</p>
+                    <audio class="center-block" controls="controls">
+                        <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
+                    </audio>
+                        <a href="/">Back to main page and finish the expirement</a>
+                </div> 
+            </div>
         @break
         @case(5)
+        <div class='container text-center'>
+            <h1 class='text-center'>请选择音频对应的悲伤语气的程度</h1>
+            <div class='row' id='formBox'>
+                <form action="{{ '/exp/' . $exp_id. '/subject/' .$sub_id. '/audio/' .$audio->id. '/sadness' }}"
+                    method="post">
+                    {{ csrf_field() }}
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="0">极弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="1">较弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="2">一般
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="3">较强
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="4">极强
+                    </div>
+                    <br>
+                    <div class=''>
+                        <input type="submit" value="提交" id='submitBox'>
+                    </div>
+                </form>
+            </div>
+                <div class="row text-center">
+                    <p>Subject: {{$sub_id}} </p>
+                    <p>Audio: {{$audio->id}}</p>
+                    <audio class="center-block" controls="controls">
+                        <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
+                    </audio>
+                        <a href="/">Back to main page and finish the expirement</a>
+                </div> 
+            </div>
+        @break
+        @case(6)
+        <div class='container text-center'>
+            <h1 class='text-center'>请选择音频对应的陈述语气的程度</h1>
+            <div class='row' id='formBox'>
+                <form action="{{ '/exp/' . $exp_id. '/subject/' .$sub_id. '/audio/' .$audio->id. '/declarative' }}"
+                    method="post">
+                    {{ csrf_field() }}
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="0">极弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="1">较弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="2">一般
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="3">较强
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="4">极强
+                    </div>
+                    <br>
+                    <div class=''>
+                        <input type="submit" value="提交" id='submitBox'>
+                    </div>
+                </form>
+            </div>
+                <div class="row text-center">
+                    <p>Subject: {{$sub_id}} </p>
+                    <p>Audio: {{$audio->id}}</p>
+                    <audio class="center-block" controls="controls">
+                        <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
+                    </audio>
+                        <a href="/">Back to main page and finish the expirement</a>
+                </div> 
+            </div>
+        @break
+        @case(7)
+        <div class='container text-center'>
+            <h1 class='text-center'>请选择音频对应的疑问语气的程度</h1>
+            <div class='row'id='formBox'>
+                <form action="{{ '/exp/' . $exp_id. '/subject/' .$sub_id. '/audio/' .$audio->id. '/questionary' }}"
+                    method="post">
+                    {{ csrf_field() }}
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="0">极弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="1">较弱
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="2">一般
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="3">较强
+                    </div>
+                    <div class='col-md-2'>
+                        <input type="radio" name="level" value="4">极强
+                    </div>
+                    <br>
+                    <div class=''>
+                        <input type="submit" value="提交" id='submitBox'>
+                    </div>
+                </form>
+            </div>
+                <div class="row text-center">
+                    <p>Subject: {{$sub_id}} </p>
+                    <p>Audio: {{$audio->id}}</p>
+                    <audio class="center-block" controls="controls">
+                        <source src="{{ asset('audios/' .$audio->name. '.wav') }}" type="audio/wav" />
+                    </audio>
+                        <a href="/">Back to main page and finish the expirement</a>
+                </div> 
+            </div>
         @break
         @default
     @endswitch
 
+        <style>
+        #formBox{
+            width: 1100px;
+            border: 25px ;
+            padding: 25px;
+            margin: 25px;
+        }
+        #submitBox{
+            width: 300px;
+            padding: 25px;
+            margin: 25px;
+            position: relative;
+        }
+        </style>
     
 </body>
 </html>

@@ -10,6 +10,8 @@ class AnswerController extends Controller
 {
     private $exp_list1 = array(1, 3);
     private $exp_list2 = array(2);
+    private $exp_list11 = array(4, 5);
+    private $exp_list22 = array(6, 7);
 
     public function index($exp_id, $sub_id){
 
@@ -45,6 +47,7 @@ class AnswerController extends Controller
         $answer->subject_id = $sub_id;
         $answer->audio_id = $audio_id;
         $answer->experiment_id = $exp_id;
+        $input = $request->input();
 
 
         if (in_array($exp_id, $this->exp_list1)){
@@ -58,10 +61,22 @@ class AnswerController extends Controller
             $answer->solution_tone = $solution;
             // not completed yet
         }
+        elseif (in_array($exp_id, $this->exp_list11)){
+            $answer->experimenter = 1;
+            $level = $input['level'];
+            $answer->level = $level;
+        } 
+        elseif (in_array($exp_id, $this->exp_list22)){
+            $answer->experimenter = 2;
+            $level = $input['level'];
+            $answer->level = $level;
+        } 
 
         //dd([$key, $solution]);
-        if ($solution == $key){
-            $answer->correctness = 1;
+        if ($exp_id < 4){
+            if ($solution == $key){
+                $answer->correctness = 1;
+            }
         }
         //dd($answer->correctness);
         //dd($answer);
@@ -87,6 +102,6 @@ class AnswerController extends Controller
             }
         }
         $accuracy = $correct/count($list);
-        return view('finish', ['accuracy' => $accuracy]);
+        return view('finish', ['accuracy' => $accuracy, 'exp_id' => $exp_id]);
     }
 }

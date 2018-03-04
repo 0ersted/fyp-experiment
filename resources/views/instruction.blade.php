@@ -26,8 +26,12 @@
         @case(5)
         <h2>Experiment 5</h2>
         @break
+        <h2>Experiment 6</h2>
+        @break
+        <h2>Experiment 7</h2>
+        @break
     @endswitch
-    @if ($exp_id > 0 && $exp_id < 6)
+    @if ($exp_id > 0 && $exp_id < 8)
     <button type="submit">
     <a href="{{ action('AnswerController@show', ['exp_id' => $exp_id, 'sub_id' => $sub_id])}}">Start!
     </a></button>
