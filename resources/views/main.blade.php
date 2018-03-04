@@ -108,19 +108,29 @@
                     method="post">
                     {{ csrf_field() }}
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="0">极弱
+                        <input type="radio" name="level" value="0">
+                        <br>0 
+                        <br>极弱
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="1">较弱
+                        <input type="radio" name="level" value="1">
+                        <br>1
+                        <br>较弱
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="2">一般
+                        <input type="radio" name="level" value="2"> 
+                        <br>2 
+                        <br>一般
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="3">较强
+                        <input type="radio" name="level" value="3"> 
+                        <br>3 
+                        <br>较强
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="4">极强
+                        <input type="radio" name="level" value="4">
+                        <br>4 
+                        <br>极强
                     </div>
                     <br>
                     <div class='text-center'>
@@ -146,19 +156,29 @@
                     method="post">
                     {{ csrf_field() }}
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="0">极弱
+                        <input type="radio" name="level" value="0">
+                        <br>0 
+                        <br>极弱
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="1">较弱
+                        <input type="radio" name="level" value="1">
+                        <br>1
+                        <br>较弱
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="2">一般
+                        <input type="radio" name="level" value="2"> 
+                        <br>2 
+                        <br>一般
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="3">较强
+                        <input type="radio" name="level" value="3"> 
+                        <br>3 
+                        <br>较强
                     </div>
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="4">极强
+                        <input type="radio" name="level" value="4">
+                        <br>4 
+                        <br>极强
                     </div>
                     <br>
                     <div class=''>
@@ -184,20 +204,30 @@
                     method="post">
                     {{ csrf_field() }}
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="0">极弱
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="1">较弱
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="2">一般
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="3">较强
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="4">极强
-                    </div>
+                    <input type="radio" name="level" value="0">
+                    <br>0 
+                    <br>极弱
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="1">
+                    <br>1
+                    <br>较弱
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="2"> 
+                    <br>2 
+                    <br>一般
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="3"> 
+                    <br>3 
+                    <br>较强
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="4">
+                    <br>4 
+                    <br>极强
+                </div>
                     <br>
                     <div class=''>
                         <input type="submit" value="提交" id='submitBox'>
@@ -222,20 +252,30 @@
                     method="post">
                     {{ csrf_field() }}
                     <div class='col-md-2'>
-                        <input type="radio" name="level" value="0">极弱
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="1">较弱
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="2">一般
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="3">较强
-                    </div>
-                    <div class='col-md-2'>
-                        <input type="radio" name="level" value="4">极强
-                    </div>
+                    <input type="radio" name="level" value="0">
+                    <br>0 
+                    <br>极弱
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="1">
+                    <br>1
+                    <br>较弱
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="2"> 
+                    <br>2 
+                    <br>一般
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="3"> 
+                    <br>3 
+                    <br>较强
+                </div>
+                <div class='col-md-2'>
+                    <input type="radio" name="level" value="4">
+                    <br>4 
+                    <br>极强
+                </div>
                     <br>
                     <div class=''>
                         <input type="submit" value="提交" id='submitBox'>
